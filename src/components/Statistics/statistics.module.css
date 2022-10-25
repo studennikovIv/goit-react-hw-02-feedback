@@ -1,0 +1,10 @@
+.titeleStatistics{
+    margin-left: 5px;
+}
+.listStatistics{
+    display: flex;
+    text-align: left;
+    justify-content: center;
+    flex-direction: column;
+    list-style: none;
+}

@@ -4,7 +4,6 @@ import Statistics from './components/Statistics/statistic'
 import FeedbackOptions from './components/FeedbackOptions/feedbackOptions'
 import Section from './components/section/section'
 import Notification from './components/Notification/notification'
-import PropTypes from 'prop-types'
 
 class App extends Component {
   state = {
@@ -59,15 +58,13 @@ class App extends Component {
           />
         </ul>
         {this.total !== 0 ? (
-          <ul className={css.listStatistics}>
-            <Statistics
-              good={this.state.good}
-              neutral={this.state.neutral}
-              bad={this.state.bad}
-              total={this.total}
-              positiveFeedback={this.positiveFeedback}
-            />
-          </ul>
+          <Statistics
+            good={this.state.good}
+            neutral={this.state.neutral}
+            bad={this.state.bad}
+            total={this.total}
+            positiveFeedback={this.positiveFeedback}
+          />
         ) : (
           <Notification message={'There is no feedback'} />
         )}

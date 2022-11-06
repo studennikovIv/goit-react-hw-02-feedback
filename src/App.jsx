@@ -36,7 +36,7 @@ class App extends Component {
         <Section titele={'Please leave feedback'} />
         
           <FeedbackOptions
-            option={Object.keys(this.state)}
+            options={Object.keys(this.state)}
             onLeaveFeedback={this.clickPlus}
           />
           

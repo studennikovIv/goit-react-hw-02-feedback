@@ -12,6 +12,7 @@ const Section = ({ titele,children }) => {
 
 Section.propTypes = {
   titele: PropTypes.string,
+  children: PropTypes.element
   
 }
 

@@ -2,17 +2,17 @@ import React from 'react'
 import css from './FeedbackOptions.module.css'
 import PropTypes from 'prop-types'
 
-const FeedbackOptions = ({ option, onLeaveFeedback }) => {
+const FeedbackOptions = ({ options, onLeaveFeedback }) => {
   return (
     <>
     <ul className={css.btnList}>
-      {option.map((el) => (
+      {options.map((el) => (
         <li key={el}>
           <button
             style={{ textTransform: 'capitalize' }}
             onClick={onLeaveFeedback}
           >
-            {el.toString()}
+            {el}
           </button>
         </li>
       ))}
@@ -22,7 +22,7 @@ const FeedbackOptions = ({ option, onLeaveFeedback }) => {
 }
 
 FeedbackOptions.propTypes = {
-  option: PropTypes.array.isRequired,
+  options: PropTypes.arrayOf(PropTypes.string).isRequired,
   onLeaveFeedback: PropTypes.func.isRequired,
 }
 

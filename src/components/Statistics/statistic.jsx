@@ -1,10 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import css from './statistics.module.css'
-const statistics = ({ good, neutral, bad, total, positiveFeedback }) => {
+const Statistics = ({ good, neutral, bad, total, positiveFeedback }) => {
   return (
     <>
-      <h2 className={css.titeleStatistics}>Statistics</h2>
       <ul className={css.listStatistics}>
         <li>Good: {good}</li>
         <li>Neutral: {neutral}</li>
@@ -16,7 +15,7 @@ const statistics = ({ good, neutral, bad, total, positiveFeedback }) => {
   )
 }
 
-statistics.propTypes = {
+Statistics.propTypes = {
   good: PropTypes.number.isRequired,
   neutral: PropTypes.number.isRequired,
   bad: PropTypes.number.isRequired,
@@ -24,4 +23,4 @@ statistics.propTypes = {
   positiveFeedback: PropTypes.number.isRequired,
 }
 
-export default statistics
+export default Statistics

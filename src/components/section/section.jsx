@@ -1,16 +1,18 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const section = ({ titele }) => {
+const Section = ({ titele,children }) => {
   return (
     <>
       <h2>{titele}</h2>
+      {children}
     </>
   )
 }
 
-section.propTypes = {
-  titele: PropTypes.string.isRequired,
+Section.propTypes = {
+  titele: PropTypes.string,
+  
 }
 
-export default section
+export default Section

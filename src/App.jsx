@@ -1,31 +1,35 @@
-import { Routes, Route } from 'react-router-dom';
-import React, { Suspense, lazy } from 'react';
+import React from 'react';
 import './App.module.css';
-const Layout = lazy(() => import('./components/Layout/Layout'));
-const Home = lazy(() => import('./page/Home/Home'));
-const Movie = lazy(() => import('./page/Movie/Movie'));
-const MovieDetails = lazy(() =>
-  import('./components/MovieDetails/MovieDetails')
-);
-const Cast = lazy(() => import('./components/Cast/Cast'));
-const Reviews = lazy(() => import('./components/Reviews/Reviews'));
-export const App = () => {
+import { Routes, Route } from 'react-router-dom';
+import Home from './components/Home/Home';
+import Header from './components/Header/Header';
+// KFC
+import menuKFC from './components/KFC/KFC.jsx';
+import titleMenuPizzaKFC from './components/KFC/titleMenuKFC.jsx';
+// Pizza Day;
+import menuPizza from './components/PizzaDay/pizzaDay';
+import titleMenuPizzaDay from './components/PizzaDay/titleMenuPizzaDay';
+import Menu from './components/Menu/Menu';
+
+const App = () => {
   return (
     <>
-      <div>
-        <Suspense fallback={<div>Загрузка...</div>}>
-          <Routes>
-            <Route path="/" element={<Layout />}>
-              <Route index element={<Home />} />
-              <Route path="/movie" element={<Movie />} />
-              <Route path="/movie/:movieId" element={<MovieDetails />}>
-                <Route path="cast" element={<Cast />} />
-                <Route path="reviews" element={<Reviews />} />
-              </Route>
-            </Route>
-          </Routes>
-        </Suspense>
+      <Header />
+      <div className="container">
+        <Routes>
+          <Route path="/dostavka" element={<Home />} />
+          <Route
+            path="/dostavka/KFC"
+            element={<Menu arrMenu={menuKFC} titleMenu={titleMenuPizzaKFC} />}
+          />
+          <Route
+            path="/dostavka/PizzaDay"
+            element={<Menu arrMenu={menuPizza} titleMenu={titleMenuPizzaDay} />}
+          />
+        </Routes>
       </div>
     </>
   );
 };
+
+export default App;

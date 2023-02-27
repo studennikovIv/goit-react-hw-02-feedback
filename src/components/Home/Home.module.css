@@ -1,0 +1,10 @@
+.card {
+  width: 220px;
+  cursor: pointer;
+}
+.conteinerCard {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 4vw;
+}

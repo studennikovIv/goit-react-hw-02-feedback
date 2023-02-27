@@ -11,6 +11,7 @@ const Home = () => {
       setArrFilm(resp.data.results);
     });
   }, []);
+  // sasdasd
   const baseImgUrl = 'https://image.tmdb.org/t/p/w500';
   const { botom_text__card, card, conteiner__card } = css;
   return (
